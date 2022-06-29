@@ -10,10 +10,8 @@ app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-const twilioAccountSid = 'AC97c478e19acebb21ee952f5dd0bcb639';
-const twilioAuthToken = 'b3c91fa5f629f22baa66c64c71e61db4';
-const twilioApiKey = 'SK9b1b24ca7fad40194af99d5b8d34a891';
-const twilioApiSecret = 'WBUNephFkEo7neng03AAyT5yo3P9lodZ';
+const { twilioAccountSid, twilioAuthToken, twilioApiKey, twilioApiSecret } =
+	process.env;
 
 app.get('/api/token-service', (req, res) => {
 	const AccessToken = require('twilio').jwt.AccessToken;
